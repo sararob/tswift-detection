@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="objDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ys-0z-jzZ">
+                                <rect key="frame" x="75" y="133" width="240" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="221" id="BFj-GS-U6f"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vUo-hZ-9xt">
+                                <rect key="frame" x="73" y="459" width="244" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="4Le-7C-Lyy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-Yz-f1o">
+                                <rect key="frame" x="150" y="20" width="75" height="30"/>
+                                <state key="normal" title="Find Taylor"/>
+                                <connections>
+                                    <action selector="selectImg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcn-XA-WxH"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Lj-J3-mMA">
+                                <rect key="frame" x="185" y="233" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mIh-sx-ohE">
+                                <rect key="frame" x="56" y="198" width="279" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="GgC-2t-BdW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ys-0z-jzZ" secondAttribute="trailing" constant="60" id="1D5-5q-Mbh"/>
+                            <constraint firstItem="mIh-sx-ohE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="2lp-0p-wOP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vUo-hZ-9xt" secondAttribute="bottom" constant="170" id="Eju-q1-oRC"/>
+                            <constraint firstItem="IGQ-Yz-f1o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGP-tG-9Ko"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Lj-J3-mMA" secondAttribute="trailing" constant="170" id="JXR-JI-WHR"/>
+                            <constraint firstItem="8Lj-J3-mMA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="185" id="Ko6-v1-ra1"/>
+                            <constraint firstItem="mIh-sx-ohE" firstAttribute="bottom" secondItem="8Lj-J3-mMA" secondAttribute="bottom" id="MtL-Rv-lVz"/>
+                            <constraint firstItem="mIh-sx-ohE" firstAttribute="centerX" secondItem="8Lj-J3-mMA" secondAttribute="centerX" id="UPK-BP-dDo"/>
+                            <constraint firstItem="IGQ-Yz-f1o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WyG-X0-PRO"/>
+                            <constraint firstItem="9Ys-0z-jzZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="aTo-z3-FP1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ys-0z-jzZ" secondAttribute="bottom" constant="313" id="bFj-uY-yGG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Lj-J3-mMA" secondAttribute="bottom" constant="414" id="dYS-o5-R53"/>
+                            <constraint firstItem="vUo-hZ-9xt" firstAttribute="centerX" secondItem="9Ys-0z-jzZ" secondAttribute="centerX" id="jY6-d2-ru8"/>
+                            <constraint firstItem="vUo-hZ-9xt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="kXn-0R-gdd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="noTaylorText" destination="mIh-sx-ohE" id="WPR-R1-XEz"/>
+                        <outlet property="predictedImgView" destination="9Ys-0z-jzZ" id="XaE-Q3-8lL"/>
+                        <outlet property="resultText" destination="vUo-hZ-9xt" id="Q9Z-XJ-hz3"/>
+                        <outlet property="spinner" destination="8Lj-J3-mMA" id="jwG-Ak-5pJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>

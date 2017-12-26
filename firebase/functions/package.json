@@ -1,0 +1,15 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.1",
+    "firebase-admin": "^5.5.1",
+    "firebase-functions": "^0.7.0",
+    "googleapis": "^23.0.0",
+    "image-size": "^0.6.1"
+  },
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.14.0"
+  }
+}
