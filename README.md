@@ -3,7 +3,7 @@ Building, training, and serving a TensorFlow Object Detection model
 
 *This is not an official Google product.*
 
-This repo contains the code from [this blog post](TODO) explaining how I built a Taylor Swift detector using the [TensorFlow object detection API], [Cloud ML Engine](http://cloud.google.com/ml-engine), and the Firebase SDKs for Cloud Functions and Cloud Storage. See the blog post for details and follow the steps below to build, train, and serve your detector.
+This repo contains the code from [this blog post](TODO) explaining how I built a Taylor Swift detector using the [TensorFlow object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), [Cloud ML Engine](http://cloud.google.com/ml-engine), and the Firebase SDKs for Cloud Functions and Cloud Storage. See the blog post for details and follow the steps below to build, train, and serve your detector.
 
 ## Preprocessing images and converting to TFRecords
 
@@ -90,16 +90,16 @@ Now you're ready to make predictions!
 
 * Install the [Firebase CLI](https://firebase.google.com/docs/cli/) and initialize a project with Storage, Functions, and Firestore. 
 * Copy the dependencies from `firebase/functions/package.json` and run `npm install` from the `functions/` directory
-* Copy the code from `firebase/functions/index.js` to your functions directory. Then deploy the function by running: `firebase deploy --only functions`. 
+* Copy the code from `firebase/functions/index.js` to your functions directory. Update the name value in the `params` with the name of your Cloud project and ML Engine model. Then deploy the function by running: `firebase deploy --only functions`. 
 * Once the function deploys, test it out: create an `images/` subdirectory in the Storage bucket in your Firebase console, and upload an image (ideally it contains whatever you're trying to detect). If you're detection model finds an object in the image with > 70% confidence (I chose 70%, you can change it in the functions code), you should see something like the following written to your Firestore database:
 
-![/screenshots/firestore-detection.png](Firestore screenshot)
+![Firestore screenshot](/screenshots/firestore-detection.png)
 
 The `image_path` key corresponds to the path where your outlined image was written to your Storage bucket. Confirm the image was added to your storage bucket with a box drawn wherever the detected object was found. If `image_path` is empty, no object (with > 70% confidence) was found.
 * After confirming your function is working correctly (you can debug it by checking the logs in your Functions console), it's time to wire up the iOS client (you could easily write a [web](https://firebase.google.com/docs/web/setup) or [Android](https://firebase.google.com/docs/android/setup) client in addition to this, but it's a Taylor Swift detector so...Swift).
 * Set up an iOS project in your Firebase console by selecting "Add Firebase to your iOS app" on your project overview page:
 
-![/screenshots/select-ios.png](Overview screenshot)
+![Overview screenshot](/screenshots/select-ios.png)
 
 * Open the `swift-client` subdirectory in XCode
 * Download the `GoogleService-Info.plist` file from your Firebase console and drag it into the root directory for your project (full iOS setup instructions for Firebase are [here](https://firebase.google.com/docs/ios/setup))

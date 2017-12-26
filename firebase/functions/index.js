@@ -44,7 +44,7 @@ function cmlePredict(b64img) {
 
             const params = {
                 auth: authClient,
-                name: 'projects/sara-cloud-ml/models/tswift_detector',
+                name: 'projects/your-project-name/models/your-model-name',
                 resource: {
                     instances: [
                     {
