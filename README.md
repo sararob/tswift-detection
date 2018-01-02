@@ -3,7 +3,7 @@ Building, training, and serving a TensorFlow Object Detection model
 
 *This is not an official Google product.*
 
-This repo contains the code from [this blog post](TODO) explaining how I built a Taylor Swift detector using the [TensorFlow object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), [Cloud ML Engine](http://cloud.google.com/ml-engine), and the Firebase SDKs for Cloud Functions and Cloud Storage. It looks like this:
+This repo contains the code from [this blog post](https://medium.com/@srobtweets/build-a-taylor-swift-detector-with-the-tensorflow-object-detection-api-ml-engine-and-swift-82707f5b4a56) explaining how I built a Taylor Swift detector using the [TensorFlow object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection), [Cloud ML Engine](http://cloud.google.com/ml-engine), and the Firebase SDKs for Cloud Functions and Cloud Storage. It looks like this:
 
 ![gif-screenshot](/screenshots/find-taylor.gif)
 
