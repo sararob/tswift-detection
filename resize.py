@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Copyright 2017 Google LLC
 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,23 +17,23 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
 
-import argparse
 import os
+import sys
+import pathlib
 from PIL import Image
+from os import listdir
+from os.path import isfile, join
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--image_dir', help='Directory of images to resize')
-args = parser.parse_args()
+image_dir = sys.argv[1]
 
-image_dir = os.getcwd() + "/" + args.image_dir
+onlyfiles = [f for f in listdir(image_dir) if isfile(join(image_dir, f))]
 
-for f in os.listdir(image_dir):
-    filename = os.fsdecode(f)
-    image = Image.open(image_dir + '/' + filename)
-    print(image_dir + '/' + filename)
+for f in onlyfiles:
+    image = Image.open(os.path.join(image_dir, f))
+    print(os.path.join(image_dir, f))
     height, width = image.size
     if width > 600:
         resize_amt = 600 / width
         new_height = int(round(height * resize_amt))
         image = image.resize((new_height, 600))
-        image.save(os.getcwd() + "/" + image_dir + "/" + filename)
+        image.save(os.path.join(image_dir, f))
